@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet'>
+    <title>Health Insurance Cross Sell Prediction</title>
+    
+    </head>
+    
+    <body>
+     <div class="page-content">
+        <div class="head">
+        <h1>Health Insurance Cross Sell Prediction</h1>
+         <h3>Find out if health insurance cross-selling is right for you!<br> Enter your information below to get a personalized prediction.</h3></div>
+    
+             <div class="form-container">
+                <form class="form" action="/predict">
+                    <select id="gender" name="gender" required>
+                        <option value="">Select gender</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option></select>
+                    <br>
+                    <input type="number" name="age" placeholder="Age" required="required" max="100" min="3"/>
+                    <br>
+                    <select id="license" name="license" required>
+                        <option value="">Driving license</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option></select>
+                    <br>
+                    
+                    <select id="region" name="region" required>
+                        <option value="">Select Region</option>
+                        {% for i in range(53) %}
+                        <option value="{{ i }}">Region {{ i }}</option>
+                        {% endfor %}
+                    </select>
+                    <br>
+
+                    <select id="insured" name="insured" required>
+                        <option value="">Previously Insured</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option></select>
+                    <br>
+                    
+                    <select id="Vehicle_age" name="Vehicle_age" required>
+                        <option value="">Vehicle age</option>
+                        <option value="1">less than 1 year</option>
+                        <option value="0">1-2 years</option>
+                        <option value="2">more than 2 year</option>
+                    </select>
+                    <br>
+
+                    <select id="damage" name="damage" required>
+                        <option value="">Vechile damage</option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option></select>
+                    <br>
+
+                    <input type="number" name="Anuual_premium" placeholder="Anuual premium" required="required" max="1000000" min="1000"/>
+                    <br>
+                    <select id="Policy_channel" name="channel" required>
+                        <option value="">Select sales channel</option>
+                        {% for i in range(1, 164) %}
+                        <option value="{{ i }}">{{ i }}</option>
+                        {% endfor %}
+                        </select>
+                    <br>
+                    <input type="number" name="vintage" placeholder="Association Period in days" required="required" min="10" max="300"/>
+                    <br><br>
+                    <button type="submit" class="button" name="submit"><span>Predict</span></button>
+            </form>
+            </div>
+            <div class="result-container">
+            <div class="result" id="result"><p>Result:</p></div>
+            <div class="pred_text" id="container">
+                <p id="text">{{ prediction_text }}</p>
+            </div></div>
+     </div>
+</body>
+</html>

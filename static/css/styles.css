@@ -1,0 +1,256 @@
+
+body::before {
+  content: "";
+  background-image: url("image1.jpg");
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  filter: brightness(0.7) contrast(2) blur(5px);
+  z-index: -1;
+}
+
+.page-content {
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.head {
+  background-color: #b6b6ca81;
+  width: 595px;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 80%);
+}
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+}
+
+h3 {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-family: 'Lora';
+
+}
+
+.pred_text {
+  text-align: center; 
+  margin-top: 25px;
+  background-color: #f9f584;
+  width: 410px;
+  height: 30px;
+  font-family: 'Montserrat';
+  font-weight: bold; 
+  color: #000000; 
+  
+  margin: 0 auto; 
+  text-align: center; 
+  padding: 15px;
+  position: relative; 
+  overflow: hidden; 
+  
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  background-color: #f9f584;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+  left: 465px;
+}
+
+#text {
+  font-size: 18px;
+  transition: transform 1s ease;
+  animation: slide-right 1s ease 1s forwards;
+  opacity: 0;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+#container.animate #text {
+  animation-play-state: running;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+form {
+  text-align: center;
+  margin-top: 10px;
+  
+}
+
+form select[name='gender'],
+form select[name='insured'],
+form select[name='damage'],
+form select[name='license'],
+form select[name='channel']{
+  float: left;
+  clear: left;
+  margin-top: 28px;
+  margin-left: 20px;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid #959191;
+  padding: 8px 6px;
+  background-color: #eaf6f9;
+}
+
+form select[name='region'],
+form select[name='Vehicle_age']{
+  float: right;
+  clear: right;
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid #959191;
+  padding: 8px 6px;
+  background-color: #eaf6f9;
+}
+
+form input[name='age'],
+form input[name='Anuual_premium'],
+form input[name='vintage']{
+  float: right;
+  clear: right;
+  width: 220px;
+  height: 42px;
+
+  padding: 8px 13px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 3px solid #959191;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  border-radius: 10px;
+  background-color: #eaf6f9;
+}
+
+form input[type=number]:focus {
+  border: 3px solid #555;
+}
+
+.form-container button[type="submit"] {
+  position: absolute; 
+  bottom: 25px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+
+}
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #ec5523;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  width: 170px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.form-container {
+  width: 550px; 
+  height: 430px; 
+  margin: 0 auto; 
+  text-align: center; 
+  padding: 20px;
+  position: relative; 
+  overflow: hidden; 
+  background-color: #b6b6ca81;
+  opacity: 1;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 80%);
+}
+
+form input[name='Anuual_premium'] {
+  margin-top: 27px;
+  margin-right: 20px;
+}
+
+form input[name='vintage'] {
+  margin-top: 17px;
+  margin-right: 20px;
+}
+
+form select[name='region'] {
+  margin-top: 17px;
+  margin-right: 20px;
+}
+
+form select[name='Vehicle_age'] {
+  margin-top: 25px;
+  margin-right: 20px;
+}
+
+form input[name='age'] {
+  margin-right: 20px;
+}
+
+
+
